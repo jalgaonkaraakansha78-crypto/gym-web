@@ -1,0 +1,107 @@
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  padding-bottom:96px;
+}
+
+.hero__media{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+}
+.hero__scrim{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(10,10,11,0.55) 0%, rgba(10,10,11,0.35) 30%, rgba(10,10,11,0.85) 78%, #121214 100%),
+    linear-gradient(90deg, rgba(10,10,11,0.85) 0%, rgba(10,10,11,0.15) 55%);
+}
+
+.hero__content{
+  position:relative;
+  z-index:1;
+  padding-top:160px;
+  max-width:760px;
+  animation:hero-rise 0.8s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+@keyframes hero-rise{
+  from{ opacity:0; transform:translateY(22px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.hero__kicker{
+  font-weight:700;
+  font-size:0.85rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ember);
+  margin-bottom:18px;
+}
+
+.hero__headline{
+  font-size:clamp(3.2rem, 8vw, 6.2rem);
+  text-transform:uppercase;
+  color:#fff;
+}
+
+.hero__sub{
+  margin-top:24px;
+  font-size:1.1rem;
+  color:#d9d7d2;
+  max-width:520px;
+  line-height:1.65;
+}
+
+.hero__actions{
+  display:flex;
+  gap:16px;
+  margin-top:38px;
+  flex-wrap:wrap;
+}
+.hero__actions .btn-outline{
+  border-color:rgba(255,255,255,0.35);
+  color:#fff;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(4px);
+}
+.hero__actions .btn-outline:hover{ border-color:#fff; }
+
+.hero__trust{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:56px;
+  flex-wrap:wrap;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#c9c7c2;
+}
+.hero__trust i{
+  width:4px; height:4px;
+  border-radius:50%;
+  background:var(--ember);
+  display:inline-block;
+}
+
+@media (max-width:720px){
+  .hero{ padding-bottom:64px; }
+  .hero__content{ padding-top:120px; }
+  .hero__trust{ gap:10px; margin-top:40px; }
+  .hero__trust i{ display:none; }
+  .hero__trust span{ 
+    background:rgba(255,255,255,0.06);
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid var(--border);
+  }
+}

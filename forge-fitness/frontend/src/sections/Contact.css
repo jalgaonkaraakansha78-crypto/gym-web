@@ -1,0 +1,71 @@
+.contact{
+  padding:120px 0;
+  background:var(--bg);
+}
+
+.contact__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  align-items:stretch;
+}
+
+.contact__info{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+
+.contact__item{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+}
+.contact__item svg{
+  color:var(--ember);
+  flex-shrink:0;
+  margin-top:3px;
+}
+.contact__item h4{
+  font-family:var(--font-body);
+  font-size:0.95rem;
+  font-weight:700;
+  margin-bottom:6px;
+}
+.contact__item p{
+  color:var(--text-muted);
+  font-size:0.93rem;
+  line-height:1.6;
+}
+
+.contact__actions{
+  display:flex;
+  gap:14px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+
+.btn-whatsapp{
+  background:#25d366;
+  color:#0b0b0c;
+}
+.btn-whatsapp:hover{ background:#2ee377; }
+
+.contact__map{
+  margin-top:56px;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  border:1px solid var(--border);
+  height:320px;
+}
+.contact__map iframe{
+  width:100%; height:100%;
+  border:0;
+  filter:grayscale(0.3) invert(0.92) contrast(0.9);
+}
+
+@media (max-width:900px){
+  .contact__grid{ grid-template-columns:1fr; }
+  .contact{ padding:80px 0; }
+  .contact__map{ margin-top:40px; height:280px; }
+}

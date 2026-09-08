@@ -1,0 +1,88 @@
+.membership{
+  padding:120px 0;
+  background:var(--bg);
+}
+
+.membership__grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
+  align-items:stretch;
+}
+
+.plan-card{
+  position:relative;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:40px 32px;
+  display:flex;
+  flex-direction:column;
+  transition:transform 0.25s ease, border-color 0.25s ease;
+}
+.plan-card:hover{ transform:translateY(-4px); }
+
+.plan-card--featured{
+  border-color:var(--ember);
+  background:linear-gradient(180deg, rgba(255,77,28,0.08), var(--surface) 40%);
+}
+
+.plan-card__badge{
+  position:absolute;
+  top:-14px; left:32px;
+  background:var(--ember);
+  color:#12100e;
+  font-size:0.75rem;
+  font-weight:700;
+  padding:6px 14px;
+  border-radius:20px;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+
+.plan-card__name{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:1.2rem;
+  color:var(--text-muted);
+}
+
+.plan-card__price{
+  font-family:var(--font-display);
+  font-size:3rem;
+  margin-top:14px;
+  color:var(--text);
+}
+.plan-card__price span{
+  font-family:var(--font-body);
+  font-size:0.95rem;
+  font-weight:600;
+  color:var(--text-muted);
+  margin-left:6px;
+}
+
+.plan-card__features{
+  margin-top:28px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  flex:1;
+}
+.plan-card__features li{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:0.94rem;
+  color:var(--text);
+}
+.plan-card__features li svg{ color:var(--ember); flex-shrink:0; }
+
+.plan-card__cta{
+  margin-top:32px;
+  width:100%;
+}
+
+@media (max-width:900px){
+  .membership__grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
+  .membership{ padding:80px 0; }
+}
